@@ -1,6 +1,9 @@
-def fib(a, b, n):
-    if(n <= 1):
-        return b
-    return fib(b, a + b, n  - 1)
+def razb(n, s):
+    if(n == 1):
+        return s
+    for i in range(2, n + 1):
+        if(n % i == 0):
+            return razb(n // i, s + " " + str(i))
 
-print(fib(0, 1, int(input())))
+
+print(razb(int(input()), ""))
